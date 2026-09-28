@@ -53,13 +53,30 @@ const SOURCES = [
 // 1) Identificadores de modelo/versión. Si aparece uno que nunca vimos → "nuevo modelo".
 //    Ajustá o agregá patrones cuando salgan familias nuevas.
 const MODEL_PATTERNS = [
-  /\bgpt[- ]?\d+(?:\.\d+)?(?:[- ](?:mini|nano|pro|turbo|codex|chat|realtime|audio|image|oss))*\b/gi, // gpt-5, GPT-4.1 mini
-  /\bo\d(?:-(?:mini|pro|high|preview))?\b/gi,                                                        // o3, o4-mini
-  /\b(?:chatgpt|sora|codex)[- ]?\d+(?:\.\d+)?\b/gi,                                                  // sora-2
-  /\bgemini[- ]?\d+(?:\.\d+)?(?:[- ](?:pro|flash|ultra|nano|lite|thinking|live|image|preview))*\b/gi, // Gemini 2.5 Flash
-  /\b(?:imagen|veo|gemma|nano banana)[- ]?\d+(?:\.\d+)?\b/gi,                                        // Veo 3, Gemma 3
-  /\bgrok[- ]?\d+(?:\.\d+)?(?:[- ](?:mini|fast|heavy|code|imagine))*\b/gi,                           // Grok 4, grok-3-mini
-  /\bdeepseek[- ](?:v\d+(?:\.\d+)?|r\d+)(?:[- ](?:flash|pro|chat|reasoner|terminus|exp|speciale|think(?:ing)?|\d{4}))*\b/gi, // DeepSeek-V3.2, V4-Flash, R1-0528
+  // GPT: gpt-5, gpt-5.6, gpt-5.6-luna, gpt-5.6-sol, gpt-5.6-terra,
+  // gpt-5-mini, gpt-4.1, gpt-4o, etc.
+  /\bgpt[- ]?\d+(?:\.\d+)?(?:[- ]?(?:luna|sol|terra|mini|nano|pro|turbo|codex|chat|realtime|audio|image|oss|preview))?\b/gi,
+
+  // Modelos o-series: o1, o3, o3-mini, o4-mini, etc.
+  /\bo\d+(?:[- ]?(?:mini|pro|high|preview))?\b/gi,
+
+  // Sora, Codex, ChatGPT
+  /\b(?:chatgpt|sora|codex)[- ]?\d+(?:\.\d+)?\b/gi,
+
+  // Gemini
+  /\bgemini[- ]?\d+(?:\.\d+)?(?:[- ]?(?:pro|flash|ultra|nano|lite|thinking|live|image|preview))?\b/gi,
+
+  // Imagen, Veo, Gemma
+  /\b(?:imagen|veo|gemma)[- ]?\d+(?:\.\d+)?\b/gi,
+
+  // Nano Banana
+  /\bnano[- ]?banana(?:[- ]?\d+(?:\.\d+)?)?\b/gi,
+
+  // Grok
+  /\bgrok[- ]?\d+(?:\.\d+)?(?:[- ]?(?:mini|fast|heavy|code|imagine))?\b/gi,
+
+  // DeepSeek
+  /\bdeepseek[- ]?(?:v\d+(?:\.\d+)?|r\d+)(?:[- ]?(?:flash|pro|chat|reasoner|terminus|exp|speciale|thinking|\d{4}))?\b/gi,
 ];
 
 // 2) Palabras que indican un lanzamiento / cambio importante (inglés, porque las páginas están en inglés).
