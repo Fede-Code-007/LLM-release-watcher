@@ -1,6 +1,11 @@
 {
   "gpt-chatgpt": {
     "lines": [
+      "New sign-ups and upgrades to the ChatGPT Pro $200 plan are temporarily paused.",
+      "Existing Pro $200 subscriptions will continue to renew as usual. Learn more.",
+      "Language",
+      "English",
+      "Login",
       "All Collections",
       "ChatGPT",
       "ChatGPT — Release Notes",
@@ -495,12 +500,7 @@
       "Immediate image previews after sending: When you upload an image on iOS, ChatGPT used to show a gray box after you sent your message. Now it shows the preview right away so that it’s clear which photo you sent.",
       "Cleaned up logged-out mobile web experience: Logged-out users now see a composer in the middle of the screen to avoid being blocked by popups. The sidebar has also been simplified.",
       "Android",
-      "Cleaner edit-message flow: Android now makes it clearer when you’re editing a previous message.",
-      "June 4, 2026",
-      "Memory that stays more up to date",
-      "We’ve upgraded memory so ChatGPT can better keep your context up to date, helping responses stay more relevant. This makes memory more useful by reducing stale or contradictory saved memories and helps ChatGPT better understand your preferences, goals, and ongoing work. You can review the memories that ChatGPT may use to personalize responses through sources or in your memory summary.",
-      "Memories are now updated automatically, with ChatGPT keeping track of the details it determines are most important so it can continue building on the context you’ve already shared. If you prefer to revert to the legacy saved memories system, go to Settings > Memory > Saved memories.",
-      "This update is rolling out to Plus and Pro users in the US today. To access it on iOS or Android, update your ChatGPT app to the latest version. We’ll expand to Free and Go plans and additional countries over the next few weeks. Users will receive an in-product notice when the update becomes available to them. For Plus and Pro users, ChatGPT can also remember more useful context, with twice as much memory capacity."
+      "Cleaner edit-message flow: Android now makes it clearer when you’re editing a previous message."
     ],
     "models": [
       "gpt-4.5",
