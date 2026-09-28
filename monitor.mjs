@@ -154,7 +154,7 @@ for (const source of SOURCES) {
     const lines = await scrape(browser, source);
     const previas = state[source.id]?.lines;
 
-    if (!previas) {
+    if (!previas || previas.length === 0) {
       console.log(`[${source.modelo}] Primera ejecución: guardo línea base (${lines.length} líneas).`);
     } else {
       const vistas = new Set(previas);
