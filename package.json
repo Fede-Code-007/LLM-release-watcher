@@ -1,0 +1,13 @@
+{
+  "name": "llm-monitor",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Detecta cambios en las páginas de novedades de Gemini, Grok, GPT y DeepSeek",
+  "scripts": {
+    "start": "node monitor.mjs"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.15",
+    "playwright": "^1.48.0"
+  }
+}
