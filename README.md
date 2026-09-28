@@ -1,82 +1,138 @@
 # LLM Release Watcher
 
-Monitor automático que te avisa **por correo** cuando aparecen novedades en las páginas de release notes / changelog de **GPT (OpenAI)**, **Gemini**, **Grok (xAI)** y **DeepSeek**.
+Monitor automático que revisa periódicamente las páginas oficiales de *release notes* y *changelog* de distintos proveedores de modelos de lenguaje y envía avisos **por correo electrónico** cuando detecta novedades relevantes, nuevos modelos o nuevas variantes.
 
-Usa [Playwright](https://playwright.dev/) para abrir cada página como lo haría un navegador real (incluso las que cargan su contenido con JavaScript) y se ejecuta cada 2 horas con GitHub Actions.
+Actualmente monitorea **GPT (OpenAI)**, **Gemini**, **Grok (xAI)** y **DeepSeek**.
 
-## Cómo funciona?
+Utiliza [Playwright](https://playwright.dev/) para acceder a las páginas mediante Chromium, incluyendo sitios cuyo contenido se carga dinámicamente con JavaScript, y se ejecuta automáticamente cada 2 horas mediante GitHub Actions.
 
-1. EL monitor abre cada fuente configurada con Chromium en modo headless.
+## ¿Cómo funciona?
+
+1. El monitor abre cada fuente configurada utilizando Chromium en modo *headless*.
 2. Extrae el texto del contenedor principal de la página y lo normaliza en líneas.
-3. Compara esas líneas con las guardadas en `state.json` (la "memoria" del monitor).
-4. Si detecta nuevas versiones de modelos, envía un correo con el asunto `🔔 Novedades en <modelo>`, el enlace a la fuente y la lista de líneas nuevas.
-5. Guarda el estado actualizado. En GitHub Actions, `state.json` se sube al repo con un commit, y solo cuando cambió.
+3. Compara las líneas obtenidas con las almacenadas en `state.json`, que funciona como memoria del monitor.
+4. Detecta modelos y variantes mediante expresiones regulares. Por ejemplo, puede distinguir identificadores como `GPT-5.6`, `GPT-5.6-Luna`, `GPT-5.6-Sol` y `GPT-5.6-Terra`.
+5. También identifica líneas asociadas a lanzamientos, nuevas versiones, disponibilidad, *preview*, *beta*, actualizaciones, depreciaciones y otros cambios relevantes.
+6. Si encuentra novedades, envía un correo con el nombre de la fuente, los modelos detectados y las líneas relevantes.
+7. Finalmente, actualiza `state.json`.
 
-**La primera ejecución** solo guarda la línea base y no envía correos. Los avisos empiezan desde la segunda corrida.
+En GitHub Actions, el estado actualizado se guarda en el repositorio mediante un commit **solamente cuando hubo cambios**.
 
-Si una fuente falla (timeout, bloqueo, cambio de estructura), el script lo registra en el log, sigue con las demás y no toca el estado de esa fuente.
+### Primera ejecución
+
+La primera ejecución de cada fuente solamente establece una línea base y no genera avisos.
+
+Los avisos comienzan a partir de las ejecuciones posteriores, cuando se detectan cambios respecto del estado almacenado.
+
+Si una fuente falla por un *timeout*, bloqueo, cambio de estructura o cualquier otro problema, el error se registra en el log, el monitor continúa procesando las demás fuentes y no modifica el estado de la fuente que falló.
 
 ## Fuentes monitoreadas
 
-| Modelo | Página |
-| --- | --- |
-| GPT (ChatGPT) | https://help.openai.com/en/articles/6825453-chatgpt-release-notes |
-| GPT (API) | https://platform.openai.com/docs/changelog |
-| Gemini (app) | https://gemini.google/release-notes/ |
-| Gemini (API) | https://ai.google.dev/gemini-api/docs/changelog |
-| Grok (xAI) | https://docs.x.ai/docs/release-notes |
-| DeepSeek | https://api-docs.deepseek.com/updates |
+| **Fuente**    | **Página**                                                                                          |
+| ------------- | --------------------------------------------------------------------------------------------------- |
+| GPT (ChatGPT) | [OpenAI — ChatGPT Release Notes](https://help.openai.com/en/articles/6825453-chatgpt-release-notes) |
+| GPT (API)     | [OpenAI — API Changelog](https://platform.openai.com/docs/changelog)                                |
+| Gemini (app)  | [Google — Gemini Release Notes](https://gemini.google/release-notes/)                               |
+| Gemini (API)  | [Google — Gemini API Changelog](https://ai.google.dev/gemini-api/docs/changelog)                    |
+| Grok (xAI)    | [xAI — Release Notes](https://docs.x.ai/docs/release-notes)                                         |
+| DeepSeek      | [DeepSeek — Updates](https://api-docs.deepseek.com/updates)                                         |
 
-Para agregar, quitar o corregir una fuente, editá la lista `SOURCES` al comienzo de `monitor.mjs`:
+### Agregar o modificar una fuente
+
+Las fuentes se configuran al comienzo de `monitor.mjs`, dentro de `SOURCES`.
+
+Ejemplo:
 
 ```js
 {
-  id: 'deepseek',            // identificador único (clave en state.json)
-  modelo: 'DeepSeek',        // nombre que aparece en el correo
+  id: 'deepseek',                         // identificador único
+  modelo: 'DeepSeek',                     // nombre utilizado en los avisos
   url: 'https://api-docs.deepseek.com/updates',
-  selector: 'main',          // selector CSS del contenido a vigilar
+  selector: 'main',                       // selector CSS del contenido
 }
 ```
 
-Si una página cambia su estructura y el monitor deja de leerla, ajustá el `selector`.
+Si una página cambia su estructura y el monitor deja de obtener correctamente el contenido, se puede modificar el `selector`.
+
+## Detección de modelos
+
+Los identificadores de modelos se detectan mediante las expresiones regulares definidas en `MODEL_PATTERNS` dentro de `monitor.mjs`.
+
+El detector contempla diferentes familias y variantes, entre ellas:
+
+* **GPT:** versiones numéricas y variantes como `mini`, `nano`, `pro`, `turbo`, `codex`, `realtime`, `audio`, `image`, `oss`, `preview`, `luna`, `sol` y `terra`.
+* **OpenAI o-series:** modelos como `o3`, `o4-mini`, etc.
+* **Gemini:** variantes como `pro`, `flash`, `ultra`, `nano`, `thinking`, `live`, `image` y `preview`.
+* **Grok:** variantes como `mini`, `fast`, `heavy`, `code` e `imagine`.
+* **DeepSeek:** versiones y variantes como `V3`, `V3.2`, `R1`, `Flash`, `Reasoner`, etc.
+* Otros modelos relacionados de proveedores monitorizados.
+
+Los identificadores se normalizan antes de almacenarse para evitar que diferencias de mayúsculas, minúsculas o espacios generen duplicados.
 
 ## Estructura del proyecto
 
-```
+```text
 .
-├── .github/workflows/monitor.yml   # workflow que corre cada 2 horas
+├── .github/
+│   └── workflows/
+│       └── monitor.yml             # workflow ejecutado por GitHub Actions
 ├── monitor.mjs                     # script principal
-├── package.json                    # dependencias (playwright, nodemailer)
-├── state.json                      # se genera solo tras la primera corrida
+├── package.json                    # dependencias del proyecto
+├── package-lock.json               # versiones exactas de dependencias
+├── state.json                      # estado persistente del monitor
 └── README.md
 ```
 
+`state.json` se genera automáticamente después de la primera ejecución.
+
 ## Puesta en marcha con GitHub Actions
 
-1. Subí este proyecto a un repositorio de GitHub, con estos archivos en la raíz.
-2. En *Settings → Secrets and variables → Actions*, creá los secretos:
+1. Subí el proyecto a un repositorio de GitHub.
+2. Verificá que los archivos estén en la raíz del repositorio.
+3. En **Settings → Secrets and variables → Actions**, configurá los siguientes secretos:
 
-   | Secreto | Obligatorio | Descripción |
-   | --- | --- | --- |
-   | `SMTP_USER` | Sí | Usuario / cuenta que envía el correo |
-   | `SMTP_PASS` | Sí | Contraseña de aplicación (ver nota sobre Gmail) |
-   | `MAIL_TO` | Sí | Dirección que recibe los avisos |
-   | `SMTP_HOST` | No | Por defecto `smtp.gmail.com` |
-   | `SMTP_PORT` | No | Por defecto `465` (con `587` usa STARTTLS) |
-   | `MAIL_FROM` | No | Remitente; por defecto es `SMTP_USER` |
+| **Secreto** | **Obligatorio** | **Descripción**                              |
+| ----------- | --------------- | -------------------------------------------- |
+| `SMTP_USER` | Sí              | Cuenta utilizada para enviar los correos     |
+| `SMTP_PASS` | Sí              | Contraseña de aplicación                     |
+| `MAIL_TO`   | Sí              | Dirección que recibirá los avisos            |
+| `SMTP_HOST` | No              | Servidor SMTP. Por defecto: `smtp.gmail.com` |
+| `SMTP_PORT` | No              | Puerto SMTP. Por defecto: `465`              |
+| `MAIL_FROM` | No              | Remitente. Por defecto utiliza `SMTP_USER`   |
 
-3. En *Settings → Actions → General → Workflow permissions*, elegí **Read and write permissions** (el workflow necesita subir `state.json`).
-4. Andá a la pestaña *Actions*, elegí **Monitor de LLM** y usá **Run workflow** para lanzar la primera corrida.
+4. En **Settings → Actions → General → Workflow permissions**, seleccioná **Read and write permissions**.
 
-A partir de ahí corre solo cada 2 horas (`cron: '0 */2 * * *'`, hora UTC). GitHub puede demorar unos minutos las ejecuciones programadas cuando hay mucha carga.
+Esto es necesario porque el workflow debe poder actualizar `state.json` en el repositorio.
 
-> **Gmail:** no funciona la contraseña normal. Activá la verificación en dos pasos y generá una *contraseña de aplicación* en tu cuenta de Google.
+5. Abrí la pestaña **Actions**.
+6. Seleccioná **Monitor de LLM**.
+7. Utilizá **Run workflow** para ejecutar manualmente el monitor.
+
+Después de la primera ejecución, GitHub Actions ejecutará el monitor automáticamente cada 2 horas:
+
+```yaml
+cron: '0 */2 * * *'
+```
+
+El horario del `cron` está expresado en **UTC**. GitHub puede retrasar algunos minutos las ejecuciones programadas cuando existe mucha carga.
+
+> **Nota:** GitHub Actions puede desactivar los workflows programados de repositorios públicos que permanezcan sin actividad durante un período prolongado. Si esto ocurre, se pueden reactivar desde la pestaña **Actions**.
+
+## Configuración de Gmail
+
+Si utilizás Gmail, la contraseña normal de la cuenta no debe utilizarse como `SMTP_PASS`.
+
+Se recomienda:
+
+1. Activar la verificación en dos pasos.
+2. Generar una **contraseña de aplicación** desde la cuenta de Google.
+3. Guardar esa contraseña en el secreto `SMTP_PASS` de GitHub.
 
 ## Ejecución local
 
-Requiere Node.js 20 o superior.
+El proyecto requiere **Node.js 20 o superior**.
 
-//Codigo Linux:
+### Linux
 
 ```bash
 npm install
@@ -89,9 +145,9 @@ export MAIL_TO="destino@ejemplo.com"
 node monitor.mjs
 ```
 
-//Codigo en Windows:
+### Windows PowerShell
 
-```bash
+```powershell
 npm install
 npx playwright install chromium
 
@@ -102,26 +158,41 @@ $env:MAIL_TO="destino@ejemplo.com"
 node monitor.mjs
 ```
 
-Si no configurás el correo, el script sigue funcionando y solo muestra las novedades por consola.
+Si no se configuran las variables de correo, el monitor continúa funcionando y muestra las novedades directamente en la consola.
 
-## Cómo probar que el correo funciona
+## ¿Cómo probar que el correo funciona?
 
-1. Esperá a que exista `state.json` (tras la primera corrida).
-2. Editalo y borrá **una o dos líneas** de la lista de alguna fuente. No vacíes la lista completa: con la lista vacía el script la trata como línea base nueva y no envía nada.
-3. Ejecutá el workflow de nuevo. Esas líneas se detectan como novedad y llega el correo.
+Una vez realizada la primera ejecución, debe existir `state.json`.
+
+Para probar el sistema:
+
+1. Abrí `state.json`.
+2. Elegí una fuente.
+3. Eliminá una o dos líneas de su lista `lines`.
+4. Guardá el archivo.
+5. Ejecutá nuevamente el workflow.
+
+Si esas líneas todavía están presentes en la fuente monitoreada, el monitor las interpretará como nuevas y debería generar un aviso.
+
+No se debe eliminar completamente la lista de líneas de una fuente, ya que el programa podría interpretarla como una fuente sin línea base y establecerla nuevamente.
 
 ## Reiniciar el monitor
 
-Podés borrar `state.json` cuando quieras. En la siguiente corrida se guarda una línea base nueva y no se envía ningún correo. Las novedades que aparezcan entre el borrado y esa corrida no generan aviso.
+Se puede eliminar `state.json` cuando sea necesario.
+
+En la siguiente ejecución, el monitor establecerá una nueva línea base para cada fuente y no enviará avisos correspondientes a esa primera ejecución.
+
+Las novedades que aparezcan entre el momento en que se elimina `state.json` y la siguiente ejecución no generarán un aviso independiente, ya que formarán parte de la nueva línea base.
 
 ## Problemas frecuentes
 
-| Síntoma | Causa probable | Solución |
-| --- | --- | --- |
-| Error 403 al guardar `state.json` | El workflow no tiene permiso de escritura | Activar *Read and write permissions* (ver paso 3) |
-| Error de autenticación al enviar el correo | Falta la contraseña de aplicación | Generar una y guardarla en `SMTP_PASS` |
-| Una fuente falla con timeout o bloqueo | El sitio bloquea IPs de datacenter (por ejemplo, con Cloudflare) | Revisar el log; el resto de las fuentes sigue funcionando |
-| Llegan correos con muchas líneas irrelevantes | La página tiene contenido cambiante (fechas relativas, contadores) | Usar un `selector` más específico |
-| El correo llega con casi toda la página | La lista guardada de esa fuente quedó incompleta | Borrar `state.json` para regenerar la base |
-| Los workflows dejan de ejecutarse | GitHub desactiva los programados tras 60 días sin actividad en repos públicos | Reactivarlos desde la pestaña *Actions* |
-
+| **Síntoma**                                   | **Causa probable**                                                             | **Solución**                                  |
+| --------------------------------------------- | ------------------------------------------------------------------------------ | --------------------------------------------- |
+| Error 403 al guardar `state.json`             | El workflow no tiene permisos de escritura                                     | Activar **Read and write permissions**        |
+| Error de autenticación al enviar el correo    | Credenciales SMTP incorrectas                                                  | Verificar `SMTP_USER` y `SMTP_PASS`           |
+| Gmail rechaza la contraseña                   | Se está utilizando la contraseña normal                                        | Generar una contraseña de aplicación          |
+| Una fuente falla con timeout o bloqueo        | El sitio bloquea solicitudes desde servidores de GitHub o cambió su estructura | Revisar el log y comprobar el `selector`      |
+| Llegan correos con muchas líneas irrelevantes | La página contiene contenido dinámico o cambiante                              | Utilizar un `selector` más específico         |
+| El monitor no reconoce una variante de modelo | El identificador no está contemplado en `MODEL_PATTERNS`                       | Agregar o modificar el patrón correspondiente |
+| El correo llega con casi toda la página       | El estado almacenado de esa fuente quedó desactualizado o incompleto           | Revisar o regenerar `state.json`              |
+| Los workflows programados dejan de ejecutarse | GitHub puede desactivar workflows programados de repositorios sin actividad    | Reactivar el workflow desde **Actions**       |
