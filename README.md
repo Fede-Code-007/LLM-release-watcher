@@ -9,7 +9,7 @@ Usa [Playwright](https://playwright.dev/) para abrir cada página como lo haría
 1. EL monitor abre cada fuente configurada con Chromium en modo headless.
 2. Extrae el texto del contenedor principal de la página y lo normaliza en líneas.
 3. Compara esas líneas con las guardadas en `state.json` (la "memoria" del monitor).
-4. Si hay líneas nuevas, envía un correo con el asunto `🔔 Novedades en <modelo>`, el enlace a la fuente y la lista de líneas nuevas.
+4. Si detecta nuevas versiones de modelos, envía un correo con el asunto `🔔 Novedades en <modelo>`, el enlace a la fuente y la lista de líneas nuevas.
 5. Guarda el estado actualizado. En GitHub Actions, `state.json` se sube al repo con un commit, y solo cuando cambió.
 
 **La primera ejecución** solo guarda la línea base y no envía correos. Los avisos empiezan desde la segunda corrida.
