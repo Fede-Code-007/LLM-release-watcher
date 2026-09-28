@@ -76,6 +76,8 @@ A partir de ahí corre solo cada 2 horas (`cron: '0 */2 * * *'`, hora UTC). GitH
 
 Requiere Node.js 20 o superior.
 
+//Codigo Linux:
+
 ```bash
 npm install
 npx playwright install chromium
@@ -83,6 +85,19 @@ npx playwright install chromium
 export SMTP_USER="tucuenta@gmail.com"
 export SMTP_PASS="tu-contraseña-de-aplicación"
 export MAIL_TO="destino@ejemplo.com"
+
+node monitor.mjs
+```
+
+//Codigo en Windows:
+
+```bash
+npm install
+npx playwright install chromium
+
+$env:SMTP_USER="tucuenta@gmail.com"
+$env:SMTP_PASS="tu-contraseña-de-aplicación"
+$env:MAIL_TO="destino@ejemplo.com"
 
 node monitor.mjs
 ```

@@ -12,7 +12,7 @@ const SOURCES = [
     id: 'gpt-chatgpt',
     modelo: 'GPT (ChatGPT)',
     url: 'https://help.openai.com/en/articles/6825453-chatgpt-release-notes',
-    selector: 'main',
+    selector: 'body',
   },
   {
     id: 'gpt-api',
@@ -23,7 +23,7 @@ const SOURCES = [
   {
     id: 'gemini-app',
     modelo: 'Gemini (app)',
-    url: 'https://gemini.google/release-notes/',
+    url: 'https://gemini.google/release-notes/?hl=en',
     selector: 'main',
   },
   {
@@ -46,8 +46,33 @@ const SOURCES = [
   },
 ];
 
+// ---------------------------------------------------------------
+// QUÉ CUENTA COMO "RELEVANTE"
+// ---------------------------------------------------------------
+
+// 1) Identificadores de modelo/versión. Si aparece uno que nunca vimos → "nuevo modelo".
+//    Ajustá o agregá patrones cuando salgan familias nuevas.
+const MODEL_PATTERNS = [
+  /\bgpt[- ]?\d+(?:\.\d+)?(?:[- ](?:mini|nano|pro|turbo|codex|chat|realtime|audio|image|oss))*\b/gi, // gpt-5, GPT-4.1 mini
+  /\bo\d(?:-(?:mini|pro|high|preview))?\b/gi,                                                        // o3, o4-mini
+  /\b(?:chatgpt|sora|codex)[- ]?\d+(?:\.\d+)?\b/gi,                                                  // sora-2
+  /\bgemini[- ]?\d+(?:\.\d+)?(?:[- ](?:pro|flash|ultra|nano|lite|thinking|live|image|preview))*\b/gi, // Gemini 2.5 Flash
+  /\b(?:imagen|veo|gemma|nano banana)[- ]?\d+(?:\.\d+)?\b/gi,                                        // Veo 3, Gemma 3
+  /\bgrok[- ]?\d+(?:\.\d+)?(?:[- ](?:mini|fast|heavy|code|imagine))*\b/gi,                           // Grok 4, grok-3-mini
+  /\bdeepseek[- ](?:v\d+(?:\.\d+)?|r\d+)(?:[- ](?:flash|pro|chat|reasoner|terminus|exp|speciale|think(?:ing)?|\d{4}))*\b/gi, // DeepSeek-V3.2, V4-Flash, R1-0528
+];
+
+// 2) Palabras que indican un lanzamiento / cambio importante (inglés, porque las páginas están en inglés).
+const RELEVANT_RE =
+  /\b(introduc\w*|launch\w*|releas\w*|announc\w*|new model|new version|now available|generally available|rolling out|rolled out|rollout|upgrad\w*|deprecat\w*|retir\w*|sunset\w*|shut ?down|discontinu\w*|preview|beta|GA)\b/i;
+
+// 3) Ruido típico que preferimos ignorar aunque contenga alguna palabra de arriba.
+const NOISE_RE =
+  /\b(typo|bug ?fix(?:es)?|fixed an? (?:issue|bug)|minor (?:fix|improvement)s?|performance improvements?|documentation|docs? (?:update|fix)|cookie|privacy policy|subscribe|sign ?in|log ?in)\b/i;
+
 const STATE_FILE = new URL('./state.json', import.meta.url);
 const MAX_LINES = 500;
+const MIN_LINES = 5; // si una página devuelve menos, probablemente fue un bloqueo → no tocamos el estado
 
 // Configuración del correo (variables de entorno).
 // En GitHub Actions un secreto sin definir llega como cadena vacía, por eso se usa ||.
@@ -92,11 +117,33 @@ function normalize(text) {
     .slice(0, MAX_LINES);
 }
 
+// Devuelve un Set con los identificadores de modelo encontrados, normalizados (minúsculas, guiones).
+function extractModels(lines) {
+  const found = new Set();
+  for (const line of lines) {
+    for (const re of MODEL_PATTERNS) {
+      for (const m of line.matchAll(re)) {
+        found.add(m[0].toLowerCase().replace(/\s+/g, '-'));
+      }
+    }
+  }
+  return found;
+}
+
+// De las líneas nuevas, se queda con las que parecen un lanzamiento/cambio importante.
+function filterRelevant(nuevas) {
+  return nuevas.filter((l) => {
+    if (NOISE_RE.test(l)) return false;
+    return RELEVANT_RE.test(l) || extractModels([l]).size > 0;
+  });
+}
+
 async function scrape(browser, source) {
   const context = await browser.newContext({
     userAgent:
       'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36',
     locale: 'en-US',
+    extraHTTPHeaders: { 'Accept-Language': 'en-US,en;q=0.9' },
   });
   const page = await context.newPage();
   try {
@@ -106,17 +153,33 @@ async function scrape(browser, source) {
     const el = page.locator(source.selector).first();
     await el.waitFor({ timeout: 15000 });
     const text = await el.innerText();
-    return normalize(text);
+    const lines = normalize(text);
+    if (lines.length < MIN_LINES) {
+      throw new Error(`Contenido sospechosamente corto (${lines.length} líneas)`);
+    }
+    return lines;
+  } catch (err) {
+    // Diagnóstico: título de la página y captura de pantalla (útil si hay un bloqueo tipo Cloudflare)
+    const titulo = await page.title().catch(() => '?');
+    await page.screenshot({ path: `error-${source.id}.png` }).catch(() => {});
+    err.message += ` | título de la página: "${titulo}" | captura: error-${source.id}.png`;
+    throw err;
   } finally {
     await context.close();
   }
 }
 
-async function notify(source, nuevas) {
-  const resumen = nuevas.slice(0, 15).map((l) => `• ${l.slice(0, 200)}`).join('\n');
+async function notify(source, { modelosNuevos, relevantes }) {
+  const hayModelo = modelosNuevos.length > 0;
+  const titulo = hayModelo
+    ? `Nuevo modelo/versión en ${source.modelo}: ${modelosNuevos.slice(0, 3).join(', ')}`
+    : `Actualización relevante en ${source.modelo}`;
+
+  const resumen = relevantes.slice(0, 15).map((l) => `• ${l.slice(0, 200)}`).join('\n');
+  const cabecera = hayModelo ? `Modelos detectados: ${modelosNuevos.join(', ')}\n\n` : '';
   const mensaje =
-    `🔔 Novedades en ${source.modelo}\n${source.url}\n\n${resumen}` +
-    (nuevas.length > 15 ? `\n…y ${nuevas.length - 15} líneas más` : '');
+    `🔔 ${titulo}\n${source.url}\n\n${cabecera}${resumen}` +
+    (relevantes.length > 15 ? `\n…y ${relevantes.length - 15} líneas más` : '');
 
   console.log('\n' + mensaje + '\n');
 
@@ -124,15 +187,16 @@ async function notify(source, nuevas) {
     try {
       const escapar = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
       const html =
-        `<h3>Novedades en ${escapar(source.modelo)}</h3>` +
-        `<p><a href="${source.url}">${source.url}</a></p>` +
-        `<ul>${nuevas.slice(0, 30).map((l) => `<li>${escapar(l.slice(0, 300))}</li>`).join('')}</ul>` +
-        (nuevas.length > 30 ? `<p>…y ${nuevas.length - 30} líneas más</p>` : '');
+        `<h3>${escapar(titulo)}</h3>` +
+        `<p><a href="${escapar(source.url)}">${escapar(source.url)}</a></p>` +
+        (hayModelo ? `<p><b>Modelos detectados:</b> ${escapar(modelosNuevos.join(', '))}</p>` : '') +
+        `<ul>${relevantes.slice(0, 30).map((l) => `<li>${escapar(l.slice(0, 300))}</li>`).join('')}</ul>` +
+        (relevantes.length > 30 ? `<p>…y ${relevantes.length - 30} líneas más</p>` : '');
 
       await mailer.sendMail({
         from: MAIL_FROM || SMTP_USER,
         to: MAIL_TO,
-        subject: `🔔 Novedades en ${source.modelo}`,
+        subject: `🔔 ${titulo}`,
         text: mensaje,
         html,
       });
@@ -147,23 +211,47 @@ async function notify(source, nuevas) {
 // Main
 // ---------------------------------------------------------------
 const state = await loadState();
-const browser = await chromium.launch({ headless: true });
+const browser = await chromium.launch({
+  headless: true,
+  args: ['--disable-blink-features=AutomationControlled'],
+});
 
 for (const source of SOURCES) {
   try {
     const lines = await scrape(browser, source);
-    const previas = state[source.id]?.lines;
+    const previo = state[source.id];
+    const modelosActuales = extractModels(lines);
 
-    if (!previas || previas.length === 0) {
-      console.log(`[${source.modelo}] Primera ejecución: guardo línea base (${lines.length} líneas).`);
-    } else {
-      const vistas = new Set(previas);
-      const nuevas = lines.filter((l) => !vistas.has(l));
-      if (nuevas.length > 0) await notify(source, nuevas);
-      else console.log(`[${source.modelo}] Sin cambios.`);
+    if (!previo?.lines?.length) {
+      console.log(
+        `[${source.modelo}] Primera ejecución: línea base (${lines.length} líneas, ${modelosActuales.size} modelos conocidos).`
+      );
+      state[source.id] = { lines, models: [...modelosActuales].sort() };
+      continue;
     }
 
-    state[source.id] = { lines };
+    // Modelos conocidos = los guardados + los que salen de re-analizar las líneas guardadas con los
+    // patrones actuales. Así, si cambiás MODEL_PATTERNS no se disparan avisos falsos por modelos viejos.
+    const modelosConocidos = new Set([...(previo.models ?? []), ...extractModels(previo.lines)]);
+    const vistas = new Set(previo.lines);
+
+    const nuevas = lines.filter((l) => !vistas.has(l));
+    const modelosNuevos = [...extractModels(nuevas)].filter((m) => !modelosConocidos.has(m));
+    const relevantes = filterRelevant(nuevas);
+
+    if (modelosNuevos.length > 0 || relevantes.length > 0) {
+      await notify(source, { modelosNuevos, relevantes });
+    } else if (nuevas.length > 0) {
+      console.log(`[${source.modelo}] ${nuevas.length} líneas nuevas, pero ninguna relevante (ignoradas).`);
+    } else {
+      console.log(`[${source.modelo}] Sin cambios.`);
+    }
+
+    // Los modelos se acumulan (unión) para no volver a avisar si una versión sale y vuelve a aparecer.
+    state[source.id] = {
+      lines,
+      models: [...new Set([...modelosConocidos, ...modelosActuales])].sort(),
+    };
   } catch (err) {
     // Si falla, NO tocamos el estado guardado de esa fuente.
     console.error(`[${source.modelo}] Error: ${err.message}`);
