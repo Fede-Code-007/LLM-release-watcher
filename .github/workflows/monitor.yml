@@ -45,10 +45,16 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Guardamos el estado nuevo, nos alineamos con el remoto y lo volvemos a poner.
+          # Así evitamos el rechazo del push si el repo cambió mientras corría el workflow.
+          cp state.json /tmp/state.json
+          git fetch origin main
+          git reset --hard origin/main
+          cp /tmp/state.json state.json
           git add state.json
           if git diff --staged --quiet; then
             echo "Sin cambios en state.json"
           else
             git commit -m "Actualizar estado del monitor"
-            git push
+            git push origin HEAD:main
           fi
