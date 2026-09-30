@@ -1,8 +1,6 @@
 {
   "gpt-chatgpt": {
     "lines": [
-      "Elevated errors across ChatGPT, Codex, and the API including the Agents API",
-      "We are monitoring recovery from an issue affecting our services. View incident",
       "Language",
       "English",
       "Login",
@@ -500,7 +498,9 @@
       "Pulse is being sunset as proactive updates move into scheduled tasks. Pro users will continue to have access for 14 days from today. To keep receiving daily updates, you can ask ChatGPT to schedule a daily briefing based on your interests and past chats.",
       "June 12, 2026",
       "Retiring GPT-5.2 models",
-      "As of June 12, 2026, GPT-5.2 models are no longer available in ChatGPT."
+      "As of June 12, 2026, GPT-5.2 models are no longer available in ChatGPT.",
+      "This applies to GPT-5.2 Instant, GPT-5.2 Thinking, and GPT-5.2 Pro. Existing conversations that used GPT-5.2 will automatically continue on the corresponding GPT-5.5 model. GPT-5.5 models remain available in ChatGPT.",
+      "This retirement was previously announced with the release of GPT-5.3 Instant. Models will generally remain available in ChatGPT for 90 days after a successor is released."
     ],
     "models": [
       "gpt-4.5",
