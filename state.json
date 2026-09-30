@@ -11,7 +11,7 @@
       "ChatGPT — Release Notes",
       "ChatGPT — Release Notes",
       "A changelog of the latest updates and release notes for ChatGPT",
-      "Updated: 19 hours ago",
+      "Updated: yesterday",
       "September 29, 2026",
       "A new Pro plan with Astra Ultrafast",
       "We’re introducing Pro 500, a new $500/month plan with the highest included usage of the Pro plans and access to Astra Ultrafast in ChatGPT Work and Codex. Select Ultrafast in the model picker to use a faster service tier for GPT-6 Astra. It uses your included allowance first, then your credit balance after that allowance is used.",
@@ -1049,6 +1049,13 @@
   "gemini-app": {
     "lines": [
       "Release Notes",
+      "2026.09.30",
+      "Let skills in Gemini tackle your most repetitive tasks",
+      "What: Today we’re rolling out skills directly into the Gemini chat globally1. Skills are a reusable set of instructions that tell Gemini how to handle specific tasks. Think of them as saved shortcuts to faster prompting.",
+      "Gemini can now help you build custom skills from your chats and automatically run them whenever you enter a matching prompt. For bigger tasks, you can stack multiple skills together at the same time — like combining a writing style skill with a brand guidelines skill to create on-brand assets in your voice.",
+      "Skills will soon replace Gems as the tool for tailoring instructions for specific tasks. To make this transition seamless, we will automatically migrate your Gems into skills when Gems go away. You can learn more about how to transition your Gems into skills by visiting our help center.",
+      "Why: We want to help you spend less time prompting and more time doing. With skills, you can save your most-used instructions once and run them endlessly – so you can skip the repetitive prompting and jump straight to the results.",
+      "1 currently available to 18+ and coming to more users soon.",
       "2026.09.10",
       "Bring Google Gemini to your PC with the new Windows app",
       "What: The Gemini app is now available on Windows. Press Alt + Space to summon Gemini instantly from anywhere on your PC whenever you need it. You can get quick answers, draft messages, and brainstorm ideas right alongside your active applications. Inside your dedicated desktop workspace, you have access to everything you love about Gemini. You can connect to Google apps like Gmail and Google Drive to summarize documents and find information quickly, generate custom images with Nano Banana, and dive into in-depth research on any topic.",
@@ -1540,14 +1547,7 @@
       "Why: Unlock deeper insights from your documents and streamline your workflows with Gemini Advanced to save time.",
       "Chat with Gemini in Google Messages",
       "What: Starting in English and on select devices , you can now chat with Gemini directly in Google Messages. Try it out by clicking on the “Start chat” button on Google Messages and select Gemini.",
-      "Why: You can draft messages, brainstorm ideas, plan events or simply have a fun conversation, all without leaving the Google Messages app.",
-      "2024.04.30",
-      "The Gemini mobile app is available in more languages",
-      "What: The Gemini app is available in languages like Japanese, Korean, Spanish, Portuguese, and more. Chat to get help with writing, planning, learning and more in a variety of supported languages. Learn more about language, country, and device availability in the Help Center.",
-      "Why: We believe AI should be easier to access in your language, on the device you use the most.",
-      "Extensions are now available in more languages",
-      "What: You can now access real-time info from Google apps and services like YouTube, Maps, Flights, and Hotels in over 40 new languages where Gemini is available, including German, Portuguese, Spanish, and more. With the Gmail, Docs, and Drive Extensions, you can even easily find, summarize and get answers even from your personal content. You’re in control of your privacy settings when deciding how you want to use extensions.",
-      "Why: We’re dedicated to developing Gemini for everyone. This means steadily introducing important features to new languages while ensuring the best possible user experience."
+      "Why: You can draft messages, brainstorm ideas, plan events or simply have a fun conversation, all without leaving the Google Messages app."
     ],
     "models": [
       "gemini-1.5-flash",
