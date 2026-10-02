@@ -9,7 +9,11 @@
       "ChatGPT — Release Notes",
       "ChatGPT — Release Notes",
       "A changelog of the latest updates and release notes for ChatGPT",
-      "Updated: 15 hours ago",
+      "Updated: 2 hours ago",
+      "October 2, 2026",
+      "Finances expands to Free and Go users",
+      "Finances in ChatGPT is rolling out to Free and Go users in the U.S. on web, iOS, and Android. You can securely connect your financial accounts to find ways to save, understand your spending, and make sense of your investments, with answers grounded in your finances.",
+      "Learn more about Finances in ChatGPT.",
       "October 1, 2026",
       "New ways to shop in ChatGPT",
       "See how clothes and accessories could look on you and save your favorites for later.",
@@ -496,11 +500,7 @@
       "With scheduled tasks, users can ask ChatGPT to send reminders, handle recurring work, or monitor things for them. This update makes tasks easier to find and manage, faster and more reliable, with more useful notifications.",
       "What’s changing",
       "A new Scheduled page, discoverable in the sidebar, gives users one place to view active tasks, see when they’ll run next, and pause, resume, edit, or delete them.",
-      "All tasks are faster and more reliable.",
-      "Users can schedule work for specific times or broader windows, such as morning, afternoon, or evening.",
-      "Monitoring tasks can search the web and check connected apps for changes and notify users only when there is something worth reporting.",
-      "Availability and limits",
-      "Rolling out to Plus, Pro, Business, and Enterprise users."
+      "All tasks are faster and more reliable."
     ],
     "models": [
       "gpt-4.5",
@@ -2141,6 +2141,10 @@
       "View as Markdown",
       "Create API key",
       "Meet grok-4.7",
+      "October",
+      "October 2",
+      "grok-voice-transcribe-1.0 end of life",
+      "grok-voice-transcribe-1.0 is deprecated and reaches end of life on October 2, 2026. All requests to that slug are routed to grok-voice-transcribe-2.0 at the same price, with higher accuracy. See the Speech to Text docs.",
       "September",
       "September 25",
       "safety_identifier request field",
@@ -2150,7 +2154,7 @@
       "Grok 4.7, SpaceXAI's frontier model for coding, agentic tasks, and knowledge work, is now available on the xAI API as grok-4.7. It has a 500k context window, text and image inputs with text-only output, and no text output limit. Pricing is $2 / $0.50 / $6 per 1M tokens (input / cached input / output) below 200k prompt tokens, and $4 / $1 / $12 above. Reasoning effort supports low, medium, high (default), and xhigh. On the Responses API, grok-4.7 always returns reasoning.encrypted_content, even when include does not list it. It is also served on the US regional endpoint. Grok 4.7 Fast is the same model and costs 2x the standard token rates, or 1.5x for long-context requests. It's available only in Cursor and Grok Build, not on the public xAI API, and is billed through your plan there. See the Grok 4.7 overview and the announcement.",
       "September 17",
       "Grok Voice Transcribe 2.0",
-      "grok-voice-transcribe-2.0 is now available. Use grok-voice-transcribe-1.0 or grok-voice-transcribe-2.0; the default is grok-voice-transcribe-1.0. See the Speech to Text docs.",
+      "grok-voice-transcribe-2.0 is now available. Use grok-voice-transcribe-1.0 or grok-voice-transcribe-2.0; the default is grok-voice-transcribe-2.0. See the Speech to Text docs.",
       "September 2",
       "grok-imagine-image-quality retirement on November 2",
       "On November 2, 2026, grok-imagine-image-quality is retired. Requests to the slug will be served by grok-imagine-image-2.0 with quality set to low, with no change to the request or response shape and at a lower per-image price. grok-imagine-image (1.0) is not affected. See the migration guide.",
@@ -2349,7 +2353,7 @@
       "Nov 4",
       "API Public Beta",
       "We are happy to announce the immediate availability of our API, which gives developers programmatic access to our Grok series of foundation models. To get started, head to console.x.ai and sign up to create an account. We are excited to see what developers build using Grok.",
-      "Last updated: September 28, 2026"
+      "Last updated: October 2, 2026"
     ],
     "models": [
       "grok-2",
