@@ -520,6 +520,10 @@
     "lines": [
       "Changelog",
       "Upcoming deprecations can be found on the deprecations page.",
+      "October, 2026",
+      "Oct 5",
+      "Feature",
+      "Added an in-product flow for HIPAA compliance support in API Organization settings > General. Admins of eligible organizations can now accept the standard Business Associate Agreement (BAA) and enable HIPAA compliance support for their organization. See the Help Center for eligibility, covered services, and configuration requirements.",
       "September, 2026",
       "Sep 29",
       "Feature",
@@ -1013,11 +1017,7 @@
       "gpt-4o-mini-tts-2025-12-15",
       "This launch also includes support for Custom voices for eligible customers.",
       "Dec 11",
-      "Feature",
-      "gpt-5.2",
-      "gpt-5.2-chat-latest",
-      "v1/responses",
-      "v1/chat/completions"
+      "Feature"
     ],
     "models": [
       "gpt-5",
