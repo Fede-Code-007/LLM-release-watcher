@@ -521,6 +521,9 @@
       "Changelog",
       "Upcoming deprecations can be found on the deprecations page.",
       "October, 2026",
+      "Oct 6",
+      "Update",
+      "Simplified API usage tiers from five to three: Build, Launch, and Grow. Organizations automatically upgrade as total credit purchases reach tier minimums. See usage tiers for monthly usage limits and how to view rate limits for each model.",
       "Oct 5",
       "Feature",
       "Added an in-product flow for HIPAA compliance support in API Organization settings > General. Admins of eligible organizations can now accept the standard Business Associate Agreement (BAA) and enable HIPAA compliance support for their organization. See the Help Center for eligibility, covered services, and configuration requirements.",
@@ -1014,10 +1017,7 @@
       "gpt-realtime-mini-2025-12-15",
       "gpt-audio-mini-2025-12-15",
       "gpt-4o-mini-transcribe-2025-12-15",
-      "gpt-4o-mini-tts-2025-12-15",
-      "This launch also includes support for Custom voices for eligible customers.",
-      "Dec 11",
-      "Feature"
+      "gpt-4o-mini-tts-2025-12-15"
     ],
     "models": [
       "gpt-5",
@@ -1573,6 +1573,7 @@
   "gemini-api": {
     "lines": [
       "On this page",
+      "October 6, 2026",
       "September 22, 2026",
       "September 18, 2026",
       "September 17, 2026",
@@ -1718,6 +1719,10 @@
       "Docs",
       "Release notes",
       "This page documents updates to the Gemini API.",
+      "October 6, 2026",
+      "Gemini Nano Banana 2.1 generally available (GA): Released Gemini Nano Banana 2.1 (gemini-nano-banana-2.1), the latest high-efficiency image generation and conversational editing model. An update to Nano Banana 2 (gemini-3.1-flash-image), it maintains Flash-level speed and cost efficiency while delivering significant improvements in visual quality, prompt adherence, multi-turn character consistency, text rendering, and wide and panoramic aspect ratio generation (1:4, 4:1, 1:8, 8:1) across 1K, 2K, and 4K resolutions.",
+      "See the Image generation guide to get started.",
+      "Deprecation announcement: The gemini-3.1-flash-image model is deprecated and will be shut down on October 29, 2026. Migrate to gemini-nano-banana-2.1.",
       "September 22, 2026",
       "Gemini 3.8 Flash TTS and Gemini 3.8 Flash-Lite TTS generally available (GA): Released our next-generation text-to-speech (TTS) audio models and the Gemini API Voices endpoint (/v1beta/voices):",
       "Gemini 3.8 Flash TTS (gemini-3.8-flash-tts): Flagship creative TTS model engineered for studio-grade voice fidelity, nuanced acting, regional dialects, and long-form multi-turn stability.",
@@ -2066,12 +2071,7 @@
       "Released gemma-3n-e4b-it preview, available on AI Studio and through the Gemini API, as part of the Gemma 3n launch.",
       "May 7, 2025",
       "Released gemini-2.0-flash-preview-image-generation, a preview model for generating and editing images. To learn more, see Image generation and Gemini 2.0 Flash Preview Image Generation.",
-      "May 6, 2025",
-      "Released gemini-2.5-pro-preview-05-06, a new version of our most powerful model, with improvements on code and function calling. gemini-2.5-pro-preview-03-25 will automatically point to the new version of the model.",
-      "April 17, 2025",
-      "Released gemini-2.5-flash-preview-04-17, a Gemini preview model optimized for price-performance and adaptive thinking. To learn more, see Gemini 2.5 Flash Preview and Thinking.",
-      "April 16, 2025",
-      "Launched context caching for Gemini 2.0 Flash."
+      "May 6, 2025"
     ],
     "models": [
       "gemini-1.5",
@@ -2127,6 +2127,7 @@
       "imagen-4.0",
       "nano-banana",
       "nano-banana-2",
+      "nano-banana-2.1",
       "veo-2.0",
       "veo-3",
       "veo-3.0",
