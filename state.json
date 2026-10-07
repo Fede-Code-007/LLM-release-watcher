@@ -9,12 +9,7 @@
       "ChatGPT — Release Notes",
       "ChatGPT — Release Notes",
       "A changelog of the latest updates and release notes for ChatGPT",
-      "Updated: 8 hours ago",
-      "October 6, 2026",
-      "Audio uploads in ChatGPT",
-      "Upload audio files to ChatGPT to create transcripts, summarize recordings, and ask questions about their contents. You can turn a meeting, interview, or lecture into structured notes or a follow-up email draft. To get started, attach a supported audio file to a conversation and describe what you need.",
-      "Audio uploads are available with paid ChatGPT subscriptions and workspaces. Availability may vary by workspace settings, region, client version, and model. Transcripts may contain errors, and performance may vary across languages.",
-      "For more information, see: Uploading files and audio to ChatGPT.",
+      "Updated: 5 days ago",
       "October 2, 2026",
       "Finances expands to Free and Go users",
       "Finances in ChatGPT is rolling out to Free and Go users in the U.S. on web, iOS, and Android. You can securely connect your financial accounts to find ways to save, understand your spending, and make sense of your investments, with answers grounded in your finances.",
@@ -500,7 +495,12 @@
       "Record & Replay in Codex",
       "Record & Replay is a new Codex app feature for macOS that lets eligible users demonstrate a workflow once and turn it into a reusable skill. It is useful for repetitive workflows or tasks that are easier to show than describe, such as creating a configured issue, publishing a video, or downloading a recurring report.",
       "Record & Replay requires Computer Use to be available and enabled, and initial availability excludes the European Union, UK and Switzerland. Learn more in the Record & Replay guide.",
-      "June 17, 2026"
+      "June 17, 2026",
+      "Scheduled tasks in ChatGPT",
+      "With scheduled tasks, users can ask ChatGPT to send reminders, handle recurring work, or monitor things for them. This update makes tasks easier to find and manage, faster and more reliable, with more useful notifications.",
+      "What’s changing",
+      "A new Scheduled page, discoverable in the sidebar, gives users one place to view active tasks, see when they’ll run next, and pause, resume, edit, or delete them.",
+      "All tasks are faster and more reliable."
     ],
     "models": [
       "gpt-4.5",
