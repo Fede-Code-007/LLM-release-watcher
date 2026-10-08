@@ -9,7 +9,12 @@
       "ChatGPT release notes",
       "ChatGPT release notes",
       "Review the latest updates and release notes for ChatGPT.",
-      "Updated: 22 hours ago",
+      "Updated: 2 hours ago",
+      "October 8, 2026",
+      "Faster steering in Codex",
+      "We’re rolling out faster steering in Codex in the ChatGPT desktop app. When you send a follow-up to steer a running task, Codex can respond to your changes sooner.",
+      "Use steering to correct an approach, add missing information, or change direction while Codex works. You can choose whether follow-up messages steer the current run or wait for the next one in Settings → General → Follow-up behavior.",
+      "Learn more in Using Codex with your ChatGPT plan.",
       "October 7, 2026",
       "GPT-6 and Intelligent UI in ChatGPT",
       "We’re introducing GPT-6 with Intelligent UI in ChatGPT. ChatGPT can now combine text, visuals, and interactive elements to fit your question, from side-by-side comparisons and diagrams to tools you can use directly in the conversation, such as calculators, bill splitters, and games. It can choose the format automatically, and still use a simple text answer when that works best.",
@@ -495,12 +500,7 @@
       "Web, iOS, and Android",
       "Help with pronunciations: ChatGPT can now include text and audio pronunciation guidance for words in more than 60 languages. Ask how to pronounce a word and ChatGPT can explain it with both audio and text in the conversation.",
       "World Cup updates: ChatGPT can now help you follow the tournament in a more conversational way. Ask about schedules, matchups, teams and players, country storylines, predictions, and what different match outcomes mean. Get started at chatgpt.com/football.",
-      "App permission controls: You can now choose when ChatGPT asks before using connected apps. Set ChatGPT to always ask, ask before making changes, or only ask before important changes. Manage preferences in Settings > Apps.",
-      "Easier pinning and sidebar organization: It’s now easier to keep important work close in ChatGPT. You can pin chats and projects directly from the sidebar, and your Pinned section now includes both chats and projects. You can also organize Recents as one combined list, or group chats by project so related work stays together.",
-      "Easier conversation sharing: Sharing a conversation is now faster, with a one-click flow that no longer opens a separate pop-up.",
-      "Create a note from a response: Highlight text in a ChatGPT response and choose ‘Start writing’ to keep working on it, or save it to your Library to come back to later.",
-      "Improved camera and photo uploads: Taking and uploading photos in ChatGPT on iOS is now faster and smoother, making it easier to add images to your conversations.",
-      "Android"
+      "App permission controls: You can now choose when ChatGPT asks before using connected apps. Set ChatGPT to always ask, ask before making changes, or only ask before important changes. Manage preferences in Settings > Apps."
     ],
     "models": [
       "gpt-4.5",
@@ -521,6 +521,11 @@
       "Changelog",
       "Upcoming deprecations can be found on the deprecations page.",
       "October, 2026",
+      "Oct 8",
+      "Feature",
+      "gpt-6.1-sol",
+      "v1/responses",
+      "Added Ultrafast mode for GPT-6.1 Sol in the Responses API. Use gpt-6.1-sol with service_tier: \"ultrafast\" to reduce the time between generated output tokens. It is available to all API users, subject to rate limits, with global processing and US and EU data residency. See Ultrafast pricing.",
       "Oct 7",
       "Update",
       "chat-latest",
@@ -1012,11 +1017,6 @@
       "chatgpt-image-latest",
       "Added gpt-image-1.5 and chatgpt-image-latest to the Responses API image generation tool.",
       "Dec 16",
-      "Feature",
-      "gpt-image-1.5",
-      "chatgpt-image-latest",
-      "Released gpt-image-1.5 and chatgpt-image-latest, our latest and most advanced models for image generation. Read more here.",
-      "Dec 15",
       "Feature"
     ],
     "models": [
@@ -2354,7 +2354,7 @@
       "Nov 4",
       "API Public Beta",
       "We are happy to announce the immediate availability of our API, which gives developers programmatic access to our Grok series of foundation models. To get started, head to console.x.ai and sign up to create an account. We are excited to see what developers build using Grok.",
-      "Last updated: October 2, 2026"
+      "Last updated: October 8, 2026"
     ],
     "models": [
       "grok-2",
