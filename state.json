@@ -9,7 +9,7 @@
       "ChatGPT release notes",
       "ChatGPT release notes",
       "Review the latest updates and release notes for ChatGPT.",
-      "Updated: 8 hours ago",
+      "Updated: 16 hours ago",
       "October 8, 2026",
       "Faster steering in Codex",
       "We’re rolling out faster steering in Codex in the ChatGPT desktop app. When you send a follow-up to steer a running task, Codex can respond to your changes sooner.",
@@ -1573,6 +1573,7 @@
   "gemini-api": {
     "lines": [
       "On this page",
+      "October 8, 2026",
       "October 6, 2026",
       "September 22, 2026",
       "September 18, 2026",
@@ -1719,6 +1720,12 @@
       "Docs",
       "Release notes",
       "This page documents updates to the Gemini API.",
+      "October 8, 2026",
+      "Deep Research Agent deep-research-pro-preview-12-2025 deprecation: The deep-research-pro-preview-12-2025 agent is deprecated and will be shut down on October 23, 2026.",
+      "Migrate your requests to one of the newer Deep Research agent versions:",
+      "deep-research-preview-04-2026: Designed for speed and efficiency, ideal to be streamed back to a client UI.",
+      "deep-research-max-preview-04-2026: Maximum comprehensiveness for automated context gathering and synthesis.",
+      "To migrate, update the agent parameter in your interactions.create requests from deep-research-pro-preview-12-2025 to deep-research-preview-04-2026 (or deep-research-max-preview-04-2026).",
       "October 6, 2026",
       "Gemini Nano Banana 2.1 generally available (GA): Released Gemini Nano Banana 2.1 (gemini-nano-banana-2.1), the latest high-efficiency image generation and conversational editing model. An update to Nano Banana 2 (gemini-3.1-flash-image), it maintains Flash-level speed and cost efficiency while delivering significant improvements in visual quality, prompt adherence, multi-turn character consistency, text rendering, and wide and panoramic aspect ratio generation (1:4, 4:1, 1:8, 8:1) across 1K, 2K, and 4K resolutions.",
       "See the Image generation guide to get started.",
@@ -2064,14 +2071,7 @@
       "Launched support for asynchronous function calls in the Live API.",
       "Launched an experimental URL context tool for providing URLs as additional context to prompts.",
       "Model updates:",
-      "Released gemini-2.5-flash-preview-05-20, a Gemini preview model optimized for price-performance and adaptive thinking. To learn more, see Gemini 2.5 Flash Preview and Thinking.",
-      "Released the gemini-2.5-pro-preview-tts and gemini-2.5-flash-preview-tts models, which are capable of generating speech with one or two speakers.",
-      "Released the lyria-realtime-exp model, which generates music in real time.",
-      "Released gemini-2.5-flash-preview-native-audio-dialog and gemini-2.5-flash-exp-native-audio-thinking-dialog, new Gemini models for the Live API with native audio output capabilities. To learn more, see the Live API guide and Gemini 2.5 Flash Native Audio.",
-      "Released gemma-3n-e4b-it preview, available on AI Studio and through the Gemini API, as part of the Gemma 3n launch.",
-      "May 7, 2025",
-      "Released gemini-2.0-flash-preview-image-generation, a preview model for generating and editing images. To learn more, see Image generation and Gemini 2.0 Flash Preview Image Generation.",
-      "May 6, 2025"
+      "Released gemini-2.5-flash-preview-05-20, a Gemini preview model optimized for price-performance and adaptive thinking. To learn more, see Gemini 2.5 Flash Preview and Thinking."
     ],
     "models": [
       "gemini-1.5",
