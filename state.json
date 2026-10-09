@@ -9,12 +9,12 @@
       "ChatGPT release notes",
       "ChatGPT release notes",
       "Review the latest updates and release notes for ChatGPT.",
-      "Updated: 16 hours ago",
-      "October 8, 2026",
-      "Faster steering in Codex",
-      "We’re rolling out faster steering in Codex in the ChatGPT desktop app. When you send a follow-up to steer a running task, Codex can respond to your changes sooner.",
-      "Use steering to correct an approach, add missing information, or change direction while Codex works. You can choose whether follow-up messages steer the current run or wait for the next one in Settings → General → Follow-up behavior.",
-      "Learn more in Using Codex with your ChatGPT plan.",
+      "Updated: 1 hour ago",
+      "October 9, 2026",
+      "Composer predictions in Codex",
+      "Composer predictions, available in beta, suggests your next message based on the conversation in your current Codex thread. After Codex responds, a suggestion may appear in the message box. Press Tab to accept it, then review or edit it before sending. Accepting a suggestion doesn’t send it automatically.",
+      "The beta is available to personal ChatGPT Pro users aged 18 and older in all supported regions, in the latest Codex desktop app. It supports local and SSH threads using GPT-6 Astra or GPT-6.1 Sol. Predictions are on by default; turn off Show predictions in the Composer section of General settings. During the beta, generating predictions doesn’t count toward Codex usage limits or consume credits. Messages you send, including accepted predictions, follow normal Codex usage limits and billing.",
+      "Read more: Composer predictions in Codex",
       "October 7, 2026",
       "GPT-6 and Intelligent UI in ChatGPT",
       "We’re introducing GPT-6 with Intelligent UI in ChatGPT. ChatGPT can now combine text, visuals, and interactive elements to fit your question, from side-by-side comparisons and diagrams to tools you can use directly in the conversation, such as calculators, bill splitters, and games. It can choose the format automatically, and still use a simple text answer when that works best.",
@@ -2354,7 +2354,7 @@
       "Nov 4",
       "API Public Beta",
       "We are happy to announce the immediate availability of our API, which gives developers programmatic access to our Grok series of foundation models. To get started, head to console.x.ai and sign up to create an account. We are excited to see what developers build using Grok.",
-      "Last updated: October 8, 2026"
+      "Last updated: October 9, 2026"
     ],
     "models": [
       "grok-2",
