@@ -1,6 +1,8 @@
 {
   "gpt-chatgpt": {
     "lines": [
+      "Delayed Costs data in the Compliance API",
+      "We are monitoring recovery from an issue affecting our services. View incident",
       "Language",
       "English",
       "Login",
@@ -9,7 +11,7 @@
       "ChatGPT release notes",
       "ChatGPT release notes",
       "Review the latest updates and release notes for ChatGPT.",
-      "Updated: 6 hours ago",
+      "Updated: 11 hours ago",
       "October 9, 2026",
       "Composer predictions in Codex",
       "Composer predictions, available in beta, suggests your next message based on the conversation in your current Codex thread. After Codex responds, a suggestion may appear in the message box. Press Tab to accept it, then review or edit it before sending. Accepting a suggestion doesn’t send it automatically.",
@@ -498,9 +500,7 @@
       "ChatGPT app experience updates",
       "ChatGPT now has more ways to help with common questions, from pronunciation guidance to World Cup updates. It’s also smoother to use, with easier chat organization and sharing, more control over connected apps, and faster photo uploads on iOS, and more.",
       "Web, iOS, and Android",
-      "Help with pronunciations: ChatGPT can now include text and audio pronunciation guidance for words in more than 60 languages. Ask how to pronounce a word and ChatGPT can explain it with both audio and text in the conversation.",
-      "World Cup updates: ChatGPT can now help you follow the tournament in a more conversational way. Ask about schedules, matchups, teams and players, country storylines, predictions, and what different match outcomes mean. Get started at chatgpt.com/football.",
-      "App permission controls: You can now choose when ChatGPT asks before using connected apps. Set ChatGPT to always ask, ask before making changes, or only ask before important changes. Manage preferences in Settings > Apps."
+      "Help with pronunciations: ChatGPT can now include text and audio pronunciation guidance for words in more than 60 languages. Ask how to pronounce a word and ChatGPT can explain it with both audio and text in the conversation."
     ],
     "models": [
       "gpt-4.5",
