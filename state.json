@@ -1,8 +1,6 @@
 {
   "gpt-chatgpt": {
     "lines": [
-      "Elevated FedRAMP API error rates for Astra and Sol",
-      "We are monitoring recovery from an issue affecting our services. View incident",
       "Language",
       "English",
       "Login",
@@ -11,7 +9,7 @@
       "ChatGPT release notes",
       "ChatGPT release notes",
       "Review the latest updates and release notes for ChatGPT.",
-      "Updated: 23 hours ago",
+      "Updated: yesterday",
       "October 20, 2026",
       "Introducing locked chats",
       "Locked chats let you keep selected conversations in your account while hiding them from regular chat history, pinned chats, and search. Open them with your 4-digit account PIN or supported device authentication. Your retention and model-improvement settings stay unchanged.",
@@ -500,7 +498,9 @@
       "June 26, 2026",
       "Personal finance in ChatGPT expands to Plus users and Android",
       "The personal finance experience in ChatGPT is rolling out to Plus users in the U.S. on web and iOS. It is also now available on Android for Pro and Plus users in the U.S.",
-      "Eligible users can securely connect supported financial accounts, view a dashboard of their finances, and ask ChatGPT questions grounded in their financial context"
+      "Eligible users can securely connect supported financial accounts, view a dashboard of their finances, and ask ChatGPT questions grounded in their financial context",
+      "Improved dictation in ChatGPT",
+      "We’re rolling out a new speech-to-text model for dictation in ChatGPT across all plans. This is a behind-the-scenes update, so there are no changes to how you use dictation."
     ],
     "models": [
       "gpt-4.5",
@@ -521,6 +521,9 @@
       "Changelog",
       "Upcoming deprecations can be found on the deprecations page.",
       "October, 2026",
+      "Oct 21",
+      "Feature",
+      "You can now choose which service tiers projects can use in Platform settings. Organization settings can restrict service tiers for all projects. See service tier errors.",
       "Oct 20",
       "Feature",
       "v1/responses",
@@ -1014,10 +1017,7 @@
       "Released gpt-5.2-codex to the Responses API. GPT-5.2-Codex is a version of GPT-5.2 optimized for agentic coding tasks in Codex or similar environments. Read more here.",
       "Jan 13",
       "Feature",
-      "v1/realtime",
-      "Added dedicated SIP IP ranges for Realtime API. sip.api.openai.com does GeoIP routing, and will direct SIP traffic to the closest region. Learn more.",
-      "Jan 13",
-      "Update"
+      "v1/realtime"
     ],
     "models": [
       "gpt-5",
@@ -1083,7 +1083,7 @@
       "2026.07.29",
       "Create and edit with your voice, anywhere on your desktop with Gemini on macOS",
       "What: We’re introducing a new way to work with Gemini using just your voice, right where you are. Press and hold the Fn key to dictate into your active window and have Gemini transcribe your spoken words into clean, polished text directly at your cursor. You can also enable Gemini reasoning in the app settings to do even more based on screen context—such as highlighting text to rewrite or reformat it, selecting local files to extract information, or generating images anywhere you want.",
-      "The new feature is rolling out today in English to all users on the Gemini macOS app. Download the app at gemini.google/mac.",
+      "The new feature is rolling out today in English to all users on the Gemini macOS app. Download the app at gemini.google/desktop.",
       "Why: Speaking your thoughts lets you work at the speed of thought—allowing you to ramble, hesitate, or self-correct while Gemini seamlessly makes sense of it. By taking in your screen context and outputting results directly at your cursor in any app, Gemini works right alongside you to keep you in your flow.",
       "2026.07.21",
       "3.6 Flash: An upgraded model for your daily life",
@@ -1094,7 +1094,7 @@
       "Hand off the heavy lifting to Gemini Spark, now available in the macOS app",
       "What: Gemini Spark, your personal AI agent, is coming to the Gemini app for macOS. It helps you navigate your digital life by working on tasks on your behalf. Operating autonomously and under your direction, it organizes folders, uses your local files to build documents, and handles complex workflows across Google Workspace.",
       "Coming soon, you will be able to command Gemini Spark to run tasks or access local files on your Mac directly from the web or mobile app, ensuring your desktop workflows remain at your fingertips wherever you go.",
-      "Starting today, Gemini Spark is available in English in the Gemini macOS app to Google AI Ultra subscribers aged 18 and over in supported countries. Download the app at gemini.google/mac.",
+      "Starting today, Gemini Spark is available in English in the Gemini macOS app to Google AI Ultra subscribers aged 18 and over in supported countries. Download the app at gemini.google/desktop.",
       "Why: We built this to help you automate your daily busywork, from managing local files to streamlining multi-step projects. With Gemini Spark, we are transforming Gemini from an AI assistant that answers your questions into one that actually works proactively on your behalf.",
       "2026.05.19",
       "Gemini Spark is your 24/7 personal AI agent.",
@@ -1132,7 +1132,7 @@
       "Meet your new desktop assistant: Gemini for Mac",
       "What: We’re introducing the Gemini app for Mac, a native desktop experience built to help you get more done without disrupting your flow. With a simple keyboard shortcut (Option + Space), you can bring up Gemini alongside any application you're using. You can also seamlessly share your window, allowing Gemini to understand your context and assist with exactly what’s on your screen.",
       "The new desktop app is available to users on macOS versions 15 and up, globally, for free.",
-      "Download the app directly at gemini.google/mac.",
+      "Download the app directly at gemini.google/desktop.",
       "Why: By bringing a native app to Mac, we're cutting down on context switching and giving you a faster, more integrated way to use Gemini alongside the tools you use every day.",
       "2026.03.26",
       "Make the switch: Seamlessly bring your AI memories and chat history to Gemini",
