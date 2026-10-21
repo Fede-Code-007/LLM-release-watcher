@@ -9,7 +9,12 @@
       "ChatGPT release notes",
       "ChatGPT release notes",
       "Review the latest updates and release notes for ChatGPT.",
-      "Updated: 8 minutes ago",
+      "Updated: 5 hours ago",
+      "October 20, 2026",
+      "Introducing locked chats",
+      "Locked chats let you keep selected conversations in your account while hiding them from regular chat history, pinned chats, and search. Open them with your 4-digit account PIN or supported device authentication. Your retention and model-improvement settings stay unchanged.",
+      "Locked chats are rolling out gradually to Free, Go, Plus, and Pro users on the web, in the iOS and Android apps, and in the new ChatGPT desktop app for macOS and Windows. To lock a chat, open a chat’s more options menu (•••) and select Lock chat.",
+      "Learn more about locked chats.",
       "October 16, 2026",
       "Create and collaborate on slides in ChatGPT",
       "ChatGPT Slides lets you create presentations and keep working on them with your team in Space. Start from a conversation, files, or an outline, or share an example deck to guide the style and layout.",
@@ -495,12 +500,7 @@
       "The personal finance experience in ChatGPT is rolling out to Plus users in the U.S. on web and iOS. It is also now available on Android for Pro and Plus users in the U.S.",
       "Eligible users can securely connect supported financial accounts, view a dashboard of their finances, and ask ChatGPT questions grounded in their financial context",
       "Improved dictation in ChatGPT",
-      "We’re rolling out a new speech-to-text model for dictation in ChatGPT across all plans. This is a behind-the-scenes update, so there are no changes to how you use dictation.",
-      "The update improves transcription accuracy across languages and accents, including when multilingual speakers mix or switch between languages. Evaluations showed gains in Japanese, Korean, Chinese, Urdu, Vietnamese, accented English, and long-form Spanish, French, Italian, and Portuguese.",
-      "Dictation is also more robust in noisy public spaces and workplace environments, with quiet or whispered speech, and when transcribing combinations of letters and numbers.",
-      "In our ChatGPT dictation evaluations, word error rate—a standard measure of transcription accuracy—was at least 10% lower for top languages tested than with the previous production model.",
-      "Retiring GPT-4.5",
-      "As of June 26, 2026, GPT-4.5 is no longer available in ChatGPT, including for custom GPTs. Existing conversations that used GPT-4.5 can continue with GPT-5.5."
+      "We’re rolling out a new speech-to-text model for dictation in ChatGPT across all plans. This is a behind-the-scenes update, so there are no changes to how you use dictation."
     ],
     "models": [
       "gpt-4.5",
