@@ -521,6 +521,11 @@
       "Changelog",
       "Upcoming deprecations can be found on the deprecations page.",
       "October, 2026",
+      "Oct 22",
+      "Update",
+      "gpt-6-luna",
+      "v1/decisions",
+      "The Decisions API is now generally available with gpt-6-luna. Cache shared input across requests for prompt-cache discounts, include images in individual question instructions, and pass structured data directly with input_json. Each request now supports up to 400 questions, increased from 200 in public beta. Review the changes since public beta.",
       "Oct 21",
       "Feature",
       "You can now choose which service tiers projects can use in Platform settings. Organization settings can restrict service tiers for all projects. See service tier errors.",
@@ -1012,12 +1017,7 @@
       "Announced Open Responses: an open-source spec for building multi-provider, interoperable LLM interfaces built on top of the original OpenAI Responses API.",
       "Jan 14",
       "Feature",
-      "gpt-5.2-codex",
-      "v1/responses",
-      "Released gpt-5.2-codex to the Responses API. GPT-5.2-Codex is a version of GPT-5.2 optimized for agentic coding tasks in Codex or similar environments. Read more here.",
-      "Jan 13",
-      "Feature",
-      "v1/realtime"
+      "gpt-5.2-codex"
     ],
     "models": [
       "gpt-5",
