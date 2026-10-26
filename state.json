@@ -9,7 +9,7 @@
       "ChatGPT release notes",
       "ChatGPT release notes",
       "Review the latest updates and release notes for ChatGPT.",
-      "Updated: 5 days ago",
+      "Updated: 6 days ago",
       "October 20, 2026",
       "Introducing locked chats",
       "Locked chats let you keep selected conversations in your account while hiding them from regular chat history, pinned chats, and search. Open them with your 4-digit account PIN or supported device authentication. Your retention and model-improvement settings stay unchanged.",
@@ -1574,6 +1574,7 @@
   "gemini-api": {
     "lines": [
       "On this page",
+      "October 26, 2026",
       "October 13, 2026",
       "October 8, 2026",
       "October 6, 2026",
@@ -1722,6 +1723,8 @@
       "Docs",
       "Release notes",
       "This page documents updates to the Gemini API.",
+      "October 26, 2026",
+      "Generate Content API storage on by default: New projects using the Generate Content API (generateContent, streamGenerateContent, and batchGenerateContent) on the paid tier now store requests by default (store=true), matching the Interactions API. Existing projects keep their current setting. To opt out, set store=false on individual requests or turn off Generate Content API logging in the Settings panel of the Logs and Datasets dashboard. See Logs and datasets for details.",
       "October 13, 2026",
       "Gemini 4 Argon (gemini-4-argon) generally available (GA): Released Gemini 4 Argon (gemini-4-argon), our most capable model built for complex coding, agentic, math, and science tasks.",
       "For API changes, pricing, and migration guidance, see What's new in Gemini 4 Argon.",
@@ -2069,10 +2072,7 @@
       "Released gemini-2.5-flash-lite-preview-06-17, a low-cost, high-performance Gemini 2.5 model. To learn more, see Gemini 2.5 Flash-Lite Preview.",
       "June 05, 2025",
       "Released gemini-2.5-pro-preview-06-05, a new version of our most powerful model, now with adaptive thinking. To learn more, see Gemini 2.5 Pro Preview and Thinking. gemini-2.5-pro-preview-05-06 will be redirected to gemini-2.5-pro on June 26, 2025.",
-      "May 27, 2025",
-      "The last available tuning model, Gemini 1.5 Flash 001, has been shut down. Tuning is no longer supported on any models. See Fine tuning with the Gemini API.",
-      "May 20, 2025",
-      "API updates:"
+      "May 27, 2025"
     ],
     "models": [
       "gemini-1.5",
