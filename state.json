@@ -9,7 +9,18 @@
       "ChatGPT release notes",
       "ChatGPT release notes",
       "Review the latest updates and release notes for ChatGPT.",
-      "Updated: 6 days ago",
+      "Updated: 2 hours ago",
+      "October 26, 2026",
+      "GPT-6.1 Terra",
+      "GPT-6.1 Terra is rolling out in ChatGPT Work and Codex. It supports a range of tasks, including visual reasoning, computer use, and writing.",
+      "The rollout includes Plus, Pro, Business, Enterprise, and Edu plans. As it reaches your account, you can use Terra in the Work and Codex experiences available with your plan, region, and workspace settings.",
+      "Select GPT-6.1 Terra from the model list. Your plan’s overall usage limits are unchanged. Note that some Plus and Pro users may see GPT-6.1 Terra at Medium instead of GPT-6.1 Sol at Light in the default Power presets in Work. Standard and Fast modes are supported where available.",
+      "Terra does not support UAE inference residency; this restriction is based on where inference runs, not your location.",
+      "For help using the model, see: ChatGPT Work and Codex. For current usage estimates, see: Pricing.",
+      "October 21, 2026",
+      "MoMo payments in Vietnam",
+      "You can now use MoMo to pay for ChatGPT Go, Plus, and Pro subscriptions purchased on chatgpt.com in Vietnam.",
+      "Subscriptions purchased through the iOS or Android app continue to be managed by the Apple App Store or Google Play. For supported currencies and payment methods, see: Multi-currency billing.",
       "October 20, 2026",
       "Introducing locked chats",
       "Locked chats let you keep selected conversations in your account while hiding them from regular chat history, pinned chats, and search. Open them with your 4-digit account PIN or supported device authentication. Your retention and model-improvement settings stay unchanged.",
@@ -489,18 +500,7 @@
       "GPT-Live-1 works inside a ChatGPT chat, with spoken responses appearing alongside streamed text. It can use web search and memory, show visual results through supported widgets, and work with text and images in the same conversation.",
       "GPT-Live-1 is rolling out across consumer plans, including Free, on chatgpt.com and the ChatGPT iOS and Android apps in supported regions. It is not available in ChatGPT Business, Enterprise, or Edu workspaces at launch. GPT-Live-1 does not support video or screen sharing at this time; eligible subscribers can continue using those capabilities with Advanced Voice Mode.",
       "July 6, 2026",
-      "GPT-5.5 Instant Mini in ChatGPT",
-      "We’re rolling out GPT-5.5 Instant Mini in ChatGPT. It replaces GPT-5.3 Instant Mini as the fallback model users reach after hitting their GPT-5.5 Instant or Auto rate limits. Because it serves as a fallback, it won’t appear in the model picker. This update does not affect the API or Codex.",
-      "Compared with GPT-5.3 Instant Mini, GPT-5.5 Instant Mini better tracks evolving user intent, calibrates tone, and avoids repetitive or overly structured responses. Testing also showed stronger personalization and fewer factual issues.",
-      "ChatGPT for PowerPoint is now generally available",
-      "ChatGPT for PowerPoint is now generally available globally. From a sidebar in Microsoft PowerPoint, you can create new slides and decks, revise existing presentations, ask questions about a deck’s story and structure, and use Skills and apps to work with repeatable workflows and connected sources. Slides remain editable in PowerPoint, although advanced edits and template matching may still require review.",
-      "The add-in is available to Free, Go, Plus, Pro, Business, Enterprise, ChatGPT Edu, and K-12 users, subject to plan limits and workspace settings. Install it from Microsoft Marketplace, sign in with your eligible ChatGPT account, and review important claims, numbers, and slide changes before sharing. Learn more about ChatGPT for PowerPoint.",
-      "June 26, 2026",
-      "Personal finance in ChatGPT expands to Plus users and Android",
-      "The personal finance experience in ChatGPT is rolling out to Plus users in the U.S. on web and iOS. It is also now available on Android for Pro and Plus users in the U.S.",
-      "Eligible users can securely connect supported financial accounts, view a dashboard of their finances, and ask ChatGPT questions grounded in their financial context",
-      "Improved dictation in ChatGPT",
-      "We’re rolling out a new speech-to-text model for dictation in ChatGPT across all plans. This is a behind-the-scenes update, so there are no changes to how you use dictation."
+      "GPT-5.5 Instant Mini in ChatGPT"
     ],
     "models": [
       "gpt-4.5",
@@ -513,7 +513,8 @@
       "gpt-6-luna",
       "gpt-6-pro",
       "gpt-6-sol",
-      "gpt-6.1-sol"
+      "gpt-6.1-sol",
+      "gpt-6.1-terra"
     ]
   },
   "gpt-api": {
@@ -521,6 +522,13 @@
       "Changelog",
       "Upcoming deprecations can be found on the deprecations page.",
       "October, 2026",
+      "Oct 26",
+      "Feature",
+      "gpt-6.1-terra",
+      "v1/responses",
+      "v1/chat/completions",
+      "Released GPT-6.1 Terra, a fast, efficient model for visual reasoning, precise computer use, and clear, natural writing.",
+      "See the GPT-6 guide for prompting and migration guidance.",
       "Oct 22",
       "Update",
       "gpt-6-luna",
@@ -1010,14 +1018,7 @@
       "Update",
       "gpt-5.2",
       "gpt-5.2-codex",
-      "We have optimized our inference stack for API customers and GPT-5.2 and GPT-5.2-Codex now run ~40% faster. Model and model weights are unchanged.",
-      "January, 2026",
-      "Jan 15",
-      "Announcement",
-      "Announced Open Responses: an open-source spec for building multi-provider, interoperable LLM interfaces built on top of the original OpenAI Responses API.",
-      "Jan 14",
-      "Feature",
-      "gpt-5.2-codex"
+      "We have optimized our inference stack for API customers and GPT-5.2 and GPT-5.2-Codex now run ~40% faster. Model and model weights are unchanged."
     ],
     "models": [
       "gpt-5",
@@ -1043,6 +1044,7 @@
       "gpt-6-luna",
       "gpt-6-sol",
       "gpt-6.1-sol",
+      "gpt-6.1-terra",
       "sora-2"
     ]
   },
