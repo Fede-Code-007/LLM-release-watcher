@@ -522,6 +522,9 @@
       "Changelog",
       "Upcoming deprecations can be found on the deprecations page.",
       "October, 2026",
+      "Oct 28",
+      "Feature",
+      "Eligible ChatGPT Pro and Business subscribers can now claim up to $500 per month in free API credits as a subscription benefit. Activate the benefit from ChatGPT or API Platform by linking an API organization you own. See API credits for ChatGPT subscribers for credit amounts, eligibility, and how to claim.",
       "Oct 26",
       "Feature",
       "gpt-6.1-terra",
@@ -1015,10 +1018,7 @@
       "v1/images/edits",
       "Added support for application/json requests on /v1/images/edits for GPT image models. JSON requests use images (and optional mask) with image_url or file_id references instead of multipart uploads.",
       "Feb 3",
-      "Update",
-      "gpt-5.2",
-      "gpt-5.2-codex",
-      "We have optimized our inference stack for API customers and GPT-5.2 and GPT-5.2-Codex now run ~40% faster. Model and model weights are unchanged."
+      "Update"
     ],
     "models": [
       "gpt-5",
