@@ -1576,6 +1576,7 @@
   "gemini-api": {
     "lines": [
       "On this page",
+      "October 27, 2026",
       "October 26, 2026",
       "October 13, 2026",
       "October 8, 2026",
@@ -1725,6 +1726,8 @@
       "Docs",
       "Release notes",
       "This page documents updates to the Gemini API.",
+      "October 27, 2026",
+      "Gemini API CLI (gemini-api) beta: Released the Gemini API CLI (gemini-api), a stateless, zero-dependency command-line client for AI coding agents, scripts, and CI pipelines. Use gemini-api on the Interactions API to generate text and media, analyze files, and run Gemini managed agents. See the Gemini API CLI guide to get started.",
       "October 26, 2026",
       "Generate Content API storage on by default: New projects using the Generate Content API (generateContent, streamGenerateContent, and batchGenerateContent) on the paid tier now store requests by default (store=true), matching the Interactions API. Existing projects keep their current setting. To opt out, set store=false on individual requests or turn off Generate Content API logging in the Settings panel of the Logs and Datasets dashboard. See Logs and datasets for details.",
       "October 13, 2026",
@@ -2071,10 +2074,7 @@
       "June 17, 2025",
       "Released gemini-2.5-pro, the stable version of our most powerful model, now with adaptive thinking. To learn more, see Gemini 2.5 Pro and Thinking. gemini-2.5-pro-preview-05-06 will be redirected to gemini-2.5-pro on June 26, 2025.",
       "Released gemini-2.5-flash, our first stable 2.5 Flash model. To learn more, see Gemini 2.5 Flash. gemini-2.5-flash-preview-04-17 will be deprecated on July 15, 2025.",
-      "Released gemini-2.5-flash-lite-preview-06-17, a low-cost, high-performance Gemini 2.5 model. To learn more, see Gemini 2.5 Flash-Lite Preview.",
-      "June 05, 2025",
-      "Released gemini-2.5-pro-preview-06-05, a new version of our most powerful model, now with adaptive thinking. To learn more, see Gemini 2.5 Pro Preview and Thinking. gemini-2.5-pro-preview-05-06 will be redirected to gemini-2.5-pro on June 26, 2025.",
-      "May 27, 2025"
+      "Released gemini-2.5-flash-lite-preview-06-17, a low-cost, high-performance Gemini 2.5 model. To learn more, see Gemini 2.5 Flash-Lite Preview."
     ],
     "models": [
       "gemini-1.5",
@@ -2147,6 +2147,9 @@
       "Create API key",
       "Meet grok-4.7",
       "October",
+      "October 27",
+      "Custom moderation controls",
+      "You can now set content guidelines on text API requests. Add a guidelines array to a Chat Completions or Responses API request to set how Grok handles content in the nsfw, violence, and profanity categories. Grok follows the guidelines as it writes its response. See Custom Moderation Controls.",
       "October 14",
       "Grok Voice 3.0 is available",
       "grok-voice-3.0 is now available with Speech to Speech, at the same price as Grok Voice 2.0. grok-voice-latest now points to grok-voice-3.0, so sessions that use the alias are upgraded automatically. The API is unchanged. To get started, see the Speech to Speech docs.",
@@ -2364,7 +2367,7 @@
       "Nov 4",
       "API Public Beta",
       "We are happy to announce the immediate availability of our API, which gives developers programmatic access to our Grok series of foundation models. To get started, head to console.x.ai and sign up to create an account. We are excited to see what developers build using Grok.",
-      "Last updated: October 15, 2026"
+      "Last updated: October 27, 2026"
     ],
     "models": [
       "grok-2",
