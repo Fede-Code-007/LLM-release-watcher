@@ -9,7 +9,11 @@
       "ChatGPT release notes",
       "ChatGPT release notes",
       "Review the latest updates and release notes for ChatGPT.",
-      "Updated: 16 hours ago",
+      "Updated: 2 hours ago",
+      "October 29, 2026",
+      "More Work and Codex usage on Pro and Business Premium Plans",
+      "We’re increasing the Work and Codex usage included in Pro and Business Premium plans. Pro 100 and Pro 500 plans now include twice their previous Work and Codex allowance.",
+      "We’ve also canceled the Pro 200 reduction announced in our September 29 email. If you already had the higher Work and Codex allowance, you keep it. Starting October 29, Pro 200 subscribers on the lower allowance get twice their previous Work and Codex allowance, bringing them up to the same limit.",
       "October 28, 2026",
       "Texting your dot",
       "Texting your dot is starting to roll out in beta to Pro users in the U.S.",
@@ -496,11 +500,7 @@
       "Introducing ChatGPT Sites in public beta",
       "ChatGPT Sites lets you turn your work or ideas into an interactive website or lightweight app without leaving ChatGPT. You can create dashboards, project trackers, launch calendars, prototypes, internal portals, and reports, then preview and refine the result with ChatGPT before sharing it.",
       "Business and Enterprise customers already have access to Sites. Starting today, they can also publish Sites publicly and share them with anyone through a URL, expanding Sites beyond people in their workspace.",
-      "To create a Site, start in ChatGPT Work on the web or in Work or Codex in the ChatGPT desktop app. Describe what you want to build, add any relevant content, files, data, links, or constraints, and review the private preview before publishing.",
-      "In Enterprise workspaces, public publishing is off by default and must be enabled by an admin. Sites is also rolling out in public beta to Pro, Pro Lite, and Edu users, with Plus users following over the coming days. Sites is not available on Free or Go plans. Public publishing and the expanded beta rollout are not available in the EEA, Switzerland, or the United Kingdom at launch.",
-      "Learn more about creating and managing ChatGPT Sites.",
-      "Retiring group chats in ChatGPT",
-      "Beginning July 9, users on web, iOS, and Android will no longer be able to create new group chats, turn existing conversations into group chats, or join a group chat through an invite link."
+      "To create a Site, start in ChatGPT Work on the web or in Work or Codex in the ChatGPT desktop app. Describe what you want to build, add any relevant content, files, data, links, or constraints, and review the private preview before publishing."
     ],
     "models": [
       "gpt-4.5",
