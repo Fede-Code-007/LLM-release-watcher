@@ -9,7 +9,7 @@
       "ChatGPT release notes",
       "ChatGPT release notes",
       "Review the latest updates and release notes for ChatGPT.",
-      "Updated: 2 hours ago",
+      "Updated: 16 hours ago",
       "October 28, 2026",
       "Texting your dot",
       "Texting your dot is starting to roll out in beta to Pro users in the U.S.",
@@ -17,6 +17,9 @@
       "Your dot can only text you, and you’re the only one who can text your dot. This doesn’t give your dot or OpenAI access to your other text conversations.",
       "To get started, open your dot’s profile in ChatGPT and select Texting. Make sure iMessage is enabled on your iPhone or RCS is enabled on your Android phone. Texting your dot shares the same memory and plugins as your dot in the ChatGPT app, so context carries over.",
       "We use Linq, a third-party messaging provider, to send and receive texts for your dot. As part of our partnership with Linq, we’ve done extensive penetration testing with our frontier models and third-party security firms.",
+      "API credits for eligible ChatGPT Pro and Business plans",
+      "Eligible ChatGPT Pro and Business subscribers can activate promotional API credits to build apps and agents with the OpenAI API. The credits apply to a linked API organization and are separate from ChatGPT usage credits.",
+      "See API credits benefit for eligible ChatGPT subscriptions for eligibility, activation steps and offer terms.",
       "October 27, 2026",
       "iCloud Mail and Calendar plugins in ChatGPT",
       "iCloud users can now connect Mail and Calendar to ChatGPT to find emails, catch up on your inbox, check your schedule, and update calendar events.",
@@ -497,10 +500,7 @@
       "In Enterprise workspaces, public publishing is off by default and must be enabled by an admin. Sites is also rolling out in public beta to Pro, Pro Lite, and Edu users, with Plus users following over the coming days. Sites is not available on Free or Go plans. Public publishing and the expanded beta rollout are not available in the EEA, Switzerland, or the United Kingdom at launch.",
       "Learn more about creating and managing ChatGPT Sites.",
       "Retiring group chats in ChatGPT",
-      "Beginning July 9, users on web, iOS, and Android will no longer be able to create new group chats, turn existing conversations into group chats, or join a group chat through an invite link.",
-      "Existing group chats will remain available and can continue to be used for now. When an existing group chat becomes read-only, users will retain access to the messages, files, and images already shared there. Individual ChatGPT conversations are unaffected.",
-      "Retiring Atlas",
-      "We’re deprecating Atlas as we bring browser-based agentic capabilities into ChatGPT and Codex. Atlas is scheduled to stop working on August 9, 2026."
+      "Beginning July 9, users on web, iOS, and Android will no longer be able to create new group chats, turn existing conversations into group chats, or join a group chat through an invite link."
     ],
     "models": [
       "gpt-4.5",
