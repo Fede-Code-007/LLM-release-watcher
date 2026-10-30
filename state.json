@@ -1576,6 +1576,7 @@
   "gemini-api": {
     "lines": [
       "On this page",
+      "October 30, 2026",
       "October 27, 2026",
       "October 26, 2026",
       "October 13, 2026",
@@ -1726,6 +1727,8 @@
       "Docs",
       "Release notes",
       "This page documents updates to the Gemini API.",
+      "October 30, 2026",
+      "Computer Use generally available (GA): Released the Computer Use tool to general availability (GA) across the Interactions and GenerateContent APIs.",
       "October 27, 2026",
       "Gemini API CLI (gemini-api) beta: Released the Gemini API CLI (gemini-api), a stateless, zero-dependency command-line client for AI coding agents, scripts, and CI pipelines. Use gemini-api on the Interactions API to generate text and media, analyze files, and run Gemini managed agents. See the Gemini API CLI guide to get started.",
       "October 26, 2026",
@@ -2071,10 +2074,7 @@
       "gemini-2.5-pro-exp-03-25 is shut down.",
       "June 24, 2025",
       "Released Imagen 4 Ultra and Standard Preview models. To learn more, see the Image generation page.",
-      "June 17, 2025",
-      "Released gemini-2.5-pro, the stable version of our most powerful model, now with adaptive thinking. To learn more, see Gemini 2.5 Pro and Thinking. gemini-2.5-pro-preview-05-06 will be redirected to gemini-2.5-pro on June 26, 2025.",
-      "Released gemini-2.5-flash, our first stable 2.5 Flash model. To learn more, see Gemini 2.5 Flash. gemini-2.5-flash-preview-04-17 will be deprecated on July 15, 2025.",
-      "Released gemini-2.5-flash-lite-preview-06-17, a low-cost, high-performance Gemini 2.5 model. To learn more, see Gemini 2.5 Flash-Lite Preview."
+      "June 17, 2025"
     ],
     "models": [
       "gemini-1.5",
@@ -2383,6 +2383,7 @@
   },
   "deepseek": {
     "lines": [
+      "Copy Markdown",
       "Change Log",
       "Date: 2026-10-17​",
       "Opening up the in-house search API​",
